@@ -3380,7 +3380,25 @@ function doom_build_login_css(array $settings): string
     $css .= "  filter: none !important;\n";
     $css .= "  appearance: none !important;\n";
     $css .= "  -moz-appearance: none !important;\n";
-    $css .= "  -webkit-appearance: none !important;\n";
+    $css .= "}\n";
+    // Doom: campo de 2FA (6 dígitos) — neutraliza altura/largura fixas das regras
+    // genéricas para os dígitos não cortarem. Escopo restrito ao bloco MFA.
+    $css .= ".page-anonymous [data-mfa-code-input],\n";
+    $css .= "body.welcome-anonymous [data-mfa-code-input] {\n";
+    $css .= "  flex-wrap: wrap;\n";
+    $css .= "  justify-content: center;\n";
+    $css .= "}\n";
+    $css .= ".page-anonymous [data-mfa-code-input] .totp-code-digit,\n";
+    $css .= "body.welcome-anonymous [data-mfa-code-input] .totp-code-digit {\n";
+    $css .= "  width: 3rem !important;\n";
+    $css .= "  min-width: 2.75rem !important;\n";
+    $css .= "  max-width: 3.5rem !important;\n";
+    $css .= "  height: 3.25rem !important;\n";
+    $css .= "  flex: 0 0 auto !important;\n";
+    $css .= "  padding: 0 !important;\n";
+    $css .= "  text-align: center !important;\n";
+    $css .= "  font-size: 1.5rem !important;\n";
+    $css .= "  line-height: 1.2 !important;\n";
     $css .= "}\n";
 
     return $css;
