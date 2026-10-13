@@ -3419,7 +3419,9 @@ function doom_build_login_css(array $settings): string
     $css .= "  justify-content: center !important;\n";
     $css .= "  align-items: center !important;\n";
     $css .= "  flex-wrap: wrap !important;\n";
-    $css .= "  margin: .5rem 0 !important;\n";
+    $css .= "  width: 100% !important;\n";
+    $css .= "  margin: 1.5rem auto 1.25rem auto !important;\n";
+    $css .= "  padding: .5rem 0 !important;\n";
     $css .= "}\n";
     $css .= ".page-anonymous .doom-mfa-box .doom-mfa-digit,\n";
     $css .= "body.welcome-anonymous .doom-mfa-box .doom-mfa-digit {\n";
