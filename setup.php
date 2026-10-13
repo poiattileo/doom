@@ -201,7 +201,7 @@ function plugin_version_doom()
     }
 
     return [
-        'name' => __('Doom', 'doom'),
+        'name' => '[URE] Doom',
         'version' => PLUGIN_DOOM_VERSION,
         'author' => '<a href="https://github.com/juniormarcati">Marcati</a>',
         'license' => 'AGPLv3+',
