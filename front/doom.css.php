@@ -187,4 +187,9 @@ $css .= "  max-width: 100%;\n";
 $css .= "  max-height: 100%;\n";
 $css .= "}\n";
 
+/* Doom: oculta a linha de copyright do GLPI (o JS remove por texto como fallback). */
+$css .= ".copyright {\n";
+$css .= "  display: none !important;\n";
+$css .= "}\n";
+
 echo $css;

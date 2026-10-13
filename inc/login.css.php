@@ -3260,26 +3260,10 @@ function doom_build_login_css(array $settings): string
     $css .= "body.doom-error-page .card-body {\n";
     $css .= "  background: transparent !important;\n";
     $css .= "}\n";
+    // Doom: oculta a linha de copyright do GLPI na tela de login.
     $css .= ".page-anonymous .copyright,\n";
     $css .= "body.welcome-anonymous .copyright {\n";
-    $css .= "  display: block !important;\n";
-    $css .= "  visibility: visible !important;\n";
-    $css .= "  opacity: 1 !important;\n";
-    $css .= "  position: relative;\n";
-    $css .= "  z-index: 2;\n";
-    $css .= "  width: min(100%, var(--doom-login-container-max-effective));\n";
-    $css .= "  margin: 1rem auto 2rem auto;\n";
-    $css .= "  text-align: center;\n";
-    $css .= "  padding: 0 1rem;\n";
-    $css .= "  color: color-mix(in srgb, var(--doom-login-text-color) 75%, transparent) !important;\n";
-    $css .= "  font-size: 0.75rem;\n";
-    $css .= "  letter-spacing: 0.02em;\n";
-    $css .= "  text-decoration: none;\n";
-    $css .= "}\n";
-    $css .= ".page-anonymous .copyright:hover,\n";
-    $css .= "body.welcome-anonymous .copyright:hover {\n";
-    $css .= "  color: var(--doom-login-text-color) !important;\n";
-    $css .= "  text-decoration: underline;\n";
+    $css .= "  display: none !important;\n";
     $css .= "}\n";
     if ($fieldStyle !== 'solid') {
         $css .= ".page-anonymous .main-content-card input:-webkit-autofill,\n";

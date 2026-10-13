@@ -32,6 +32,17 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Doom: remove a linha de copyright do GLPI (fallback por texto, à prova de markup).
+  try {
+    var nodes = document.querySelectorAll('footer, .footer, .copyright, a[href*="teclib"]');
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].textContent || '';
+      if (t.indexOf('GLPI Copyright') !== -1 || t.indexOf('Teclib') !== -1) {
+        nodes[i].style.display = 'none';
+      }
+    }
+  } catch (e) {}
+
   var body = document.body;
   if (!body || !body.classList.contains('horizontal-layout')) {
     return;
