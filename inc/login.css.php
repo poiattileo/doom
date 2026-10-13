@@ -3392,7 +3392,7 @@ function doom_build_login_css(array $settings): string
     $css .= "  overflow: visible !important;\n";
     $css .= "  height: auto !important;\n";
     $css .= "  max-height: none !important;\n";
-    $css .= "  margin-top: 2.5rem !important;\n";
+    $css .= "  margin-top: 6rem !important;\n";
     $css .= "}\n";
     $css .= ".page-anonymous [data-mfa-code-input] .totp-code-digit,\n";
     $css .= "body.welcome-anonymous [data-mfa-code-input] .totp-code-digit {\n";
