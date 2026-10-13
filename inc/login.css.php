@@ -3398,7 +3398,7 @@ function doom_build_login_css(array $settings): string
     $css .= "  width: 3rem !important;\n";
     $css .= "  min-width: 2.75rem !important;\n";
     $css .= "  max-width: 3.5rem !important;\n";
-    $css .= "  height: 3.5rem !important;\n";
+    $css .= "  height: 4rem !important;\n";
     $css .= "  flex: 0 0 auto !important;\n";
     $css .= "  margin-left: 0 !important;\n";
     $css .= "  margin-right: 0 !important;\n";
