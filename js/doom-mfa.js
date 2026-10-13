@@ -19,18 +19,21 @@
 
     // Texto de instrução ("Por favor, insira o código...") cortado em cima:
     // normaliza com estilo inline (passa por cima de qualquer regra genérica).
+    // Busca na página toda (não só no pai) pois o texto pode estar níveis acima.
     try {
-      var scope = box.parentElement || document;
-      var ps = scope.querySelectorAll('p');
-      for (var j = 0; j < ps.length; j++) {
-        var t = ps[j].textContent || '';
-        if (t.indexOf('insira') !== -1 && t.indexOf('digo') !== -1) {
-          ps[j].style.marginTop = '1rem';
-          ps[j].style.marginBottom = '.75rem';
-          ps[j].style.lineHeight = '1.6';
-          ps[j].style.overflow = 'visible';
-          ps[j].style.paddingTop = '.25rem';
-          ps[j].style.textAlign = 'center';
+      var els = document.querySelectorAll('p, div, span, label, h1, h2, h3, h4');
+      for (var j = 0; j < els.length; j++) {
+        var t = els[j].textContent || '';
+        if (t.indexOf('insira') !== -1 && t.indexOf('digo') !== -1 && !els[j].querySelector('input')) {
+          els[j].style.marginTop = '1rem';
+          els[j].style.marginBottom = '.75rem';
+          els[j].style.lineHeight = '1.6';
+          els[j].style.overflow = 'visible';
+          els[j].style.paddingTop = '.5rem';
+          els[j].style.paddingBottom = '.5rem';
+          els[j].style.textAlign = 'center';
+          els[j].style.height = 'auto';
+          els[j].style.maxHeight = 'none';
         }
       }
     } catch (e) {}
