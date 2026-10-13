@@ -3410,6 +3410,51 @@ function doom_build_login_css(array $settings): string
     $css .= "  line-height: normal !important;\n";
     $css .= "  vertical-align: middle !important;\n";
     $css .= "}\n";
+    // Doom: reskin do MFA — caixas próprias (ver js/doom-mfa.js). Originais ficam
+    // acessíveis porém invisíveis; o submit usa os campos reais.
+    $css .= ".page-anonymous .doom-mfa-box,\n";
+    $css .= "body.welcome-anonymous .doom-mfa-box {\n";
+    $css .= "  display: flex !important;\n";
+    $css .= "  gap: .6rem !important;\n";
+    $css .= "  justify-content: center !important;\n";
+    $css .= "  align-items: center !important;\n";
+    $css .= "  flex-wrap: wrap !important;\n";
+    $css .= "  margin: .5rem 0 !important;\n";
+    $css .= "}\n";
+    $css .= ".page-anonymous .doom-mfa-box .doom-mfa-digit,\n";
+    $css .= "body.welcome-anonymous .doom-mfa-box .doom-mfa-digit {\n";
+    $css .= "  width: 3rem !important;\n";
+    $css .= "  height: 4rem !important;\n";
+    $css .= "  flex: 0 0 auto !important;\n";
+    $css .= "  margin: 0 !important;\n";
+    $css .= "  padding: 0 !important;\n";
+    $css .= "  text-align: center !important;\n";
+    $css .= "  font-size: 1.5rem !important;\n";
+    $css .= "  font-weight: 700 !important;\n";
+    $css .= "  line-height: normal !important;\n";
+    $css .= "  color: #ffffff !important;\n";
+    $css .= "  background: rgba(255, 255, 255, .08) !important;\n";
+    $css .= "  border: 1px solid rgba(255, 255, 255, .25) !important;\n";
+    $css .= "  border-radius: .75rem !important;\n";
+    $css .= "  outline: none !important;\n";
+    $css .= "}\n";
+    $css .= ".page-anonymous .doom-mfa-box .doom-mfa-digit:focus,\n";
+    $css .= "body.welcome-anonymous .doom-mfa-box .doom-mfa-digit:focus {\n";
+    $css .= "  border-color: #0ea5e9 !important;\n";
+    $css .= "  box-shadow: 0 0 0 3px rgba(14, 165, 233, .35) !important;\n";
+    $css .= "  background: rgba(255, 255, 255, .14) !important;\n";
+    $css .= "}\n";
+    $css .= ".page-anonymous .doom-mfa-custom > input.totp-code-digit,\n";
+    $css .= "body.welcome-anonymous .doom-mfa-custom > input.totp-code-digit {\n";
+    $css .= "  position: absolute !important;\n";
+    $css .= "  width: 1px !important;\n";
+    $css .= "  height: 1px !important;\n";
+    $css .= "  opacity: 0 !important;\n";
+    $css .= "  pointer-events: none !important;\n";
+    $css .= "  margin: 0 !important;\n";
+    $css .= "  padding: 0 !important;\n";
+    $css .= "  border: 0 !important;\n";
+    $css .= "}\n";
 
     return $css;
 }

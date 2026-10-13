@@ -141,9 +141,13 @@ function plugin_init_doom()
     if (!empty($loginHeaderTags)) {
         $PLUGIN_HOOKS['add_header_tag_anonymous_page']['doom'] = $loginHeaderTags;
     }
+    // JS da tela de login: reskin do MFA roda em todas as versões; o
+    // doom-login.js legado só no <11 (comportamento original preservado).
+    $anonJs = ['js/doom-mfa.js'];
     if (!$isGlpi11) {
-        $PLUGIN_HOOKS['add_javascript_anonymous_page']['doom'] = 'js/doom-login.js';
+        $anonJs[] = 'js/doom-login.js';
     }
+    $PLUGIN_HOOKS['add_javascript_anonymous_page']['doom'] = $anonJs;
 
     if (!Session::getLoginUserID()) {
         return true;
