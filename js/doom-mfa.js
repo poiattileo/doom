@@ -17,6 +17,24 @@
     }
     box.dataset.doomMfaDone = '1';
 
+    // Texto de instrução ("Por favor, insira o código...") cortado em cima:
+    // normaliza com estilo inline (passa por cima de qualquer regra genérica).
+    try {
+      var scope = box.parentElement || document;
+      var ps = scope.querySelectorAll('p');
+      for (var j = 0; j < ps.length; j++) {
+        var t = ps[j].textContent || '';
+        if (t.indexOf('insira') !== -1 && t.indexOf('digo') !== -1) {
+          ps[j].style.marginTop = '1rem';
+          ps[j].style.marginBottom = '.75rem';
+          ps[j].style.lineHeight = '1.6';
+          ps[j].style.overflow = 'visible';
+          ps[j].style.paddingTop = '.25rem';
+          ps[j].style.textAlign = 'center';
+        }
+      }
+    } catch (e) {}
+
     var wrap = document.createElement('div');
     wrap.className = 'doom-mfa-box';
     var customs = reals.map(function (real, i) {
