@@ -3,7 +3,7 @@
 Turn GLPI into a showcase for your brand in just a few clicks.
 This plugin was developed to make GLPI visual identity easy for beginners or anyone who doesn't want to dive into CSS.
 
-**Compatibility:** GLPI 10.0.0 – 12.0.99 · PHP 7.4+
+**Compatibility:** GLPI 12.0.0 – 12.0.99 · PHP 7.4+
 
 **Languages:** 🇺🇸 [English](#english) | 🇧🇷 [Português (BR)](#portugues-br) | 🇪🇸 [Español](#espanol) | 🇫🇷 [Français](#francais)
 
